@@ -66,7 +66,7 @@ CURRENT_TEAMS = [
 # ── LOAD DATA ─────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    base = r'C:\23261A6720\IPLDATA_ANALYSER\data\processed' + '\\'
+    base    = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'processed') + '/'
     batter  = pd.read_csv(base + 'fact_batter_stats.csv')
     bowler  = pd.read_csv(base + 'fact_bowler_stats.csv')
     player  = pd.read_csv(base + 'dim_player.csv')
